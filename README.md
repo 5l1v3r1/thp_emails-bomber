@@ -2,7 +2,7 @@
 
 
 ## 📰 The content
-In these exercises, I we had to do a lot of things : 
+In these exercises,  we had to do a lot of things : 
 * 
 
 **After cloning the repository, make sure to do :**
