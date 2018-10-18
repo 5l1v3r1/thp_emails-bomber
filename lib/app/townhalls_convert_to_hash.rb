@@ -2,25 +2,15 @@ require 'json'
 
 class Converter
 
-attr_accessor :data_values # ? Est-ce qu'on l'utilise?
-
-
 	def initialize
 		file = File.read('db/emails.JSON') #Cherche le fichier JSON
 		@data = JSON.parse(file) # Parse le fichier JSON en array
-		@data_names = [] # initialisation du array pour stocker les noms des villes
-		# @data_title = []
-	end
-
-	def return_data
-		# Retourne le array
-		return @data
 	end
 
 	def return_value(dataname, value) # Utilisé dans follower (dataname = "name", value = "email" <---- va chercher name & email dans emails.JSON)
 			# Retourne le nom des villes de db/emails.json
 
-			@data_names = [] #
+			@data_names = [] #Initialisation du array pour stocker les noms des villes
 			@data_values = []
 			@data_title = [] # Département dans emails.JSON
 
@@ -34,15 +24,8 @@ attr_accessor :data_values # ? Est-ce qu'on l'utilise?
 					end
 				end
 
-			# puts @data_city
-			return @data_names #Lorsqu'on appel la fonction dans Follower on a besoin de la valeur de "name"
+			return @data_names #Lorsqu'on appelle la fonction dans Follower on a besoin de la valeur de "name"
 								# Ici nous l'avons stocké dans un tableau
-								# On aurais aussi pu concatener les méthodes & return dans la loop
+								# On aurait aussi pu concatener les méthodes & return dans la loop
 	end
-
-	def perform
-		#
-	end
-
-
 end

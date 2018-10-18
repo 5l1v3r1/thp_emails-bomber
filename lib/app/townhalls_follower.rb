@@ -36,10 +36,8 @@ class Follower
 	end
 
 	def search_all_handle
-
-		city_list = []
 		notfound = "Aucun compte Twitter trouvé.."
-		array = all_city_names = Converter.new.return_value("name", "email")
+		array = Converter.new.return_value("name", "email")
 		for user in array
 			handle_of_user = search_handle(user)
 			puts "#{"Le handle Twitter de la mairie de".yellow} #{user.red} #{"est :".yellow} #{handle_of_user.red}"

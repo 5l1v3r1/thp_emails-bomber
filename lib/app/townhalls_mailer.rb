@@ -23,7 +23,7 @@ class Mailer
   end
 
   def send_emails(municipalities, name)
-    timer = 0
+    timer = 1
     for departement in municipalities
       for municipality in departement.values
         for values in municipality
