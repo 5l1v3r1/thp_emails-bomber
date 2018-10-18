@@ -31,7 +31,7 @@ class Follower
 				begin
 					result = @client.user_search(research)[0].screen_name
 				rescue NoMethodError
-					result = 'No handle found.'
+					result = 'Aucun compte Twitter trouvé..'
 				end
 			end
 		ensure
@@ -47,7 +47,12 @@ class Follower
 
 		array = all_city_names = Converter.new.return_value("name", "email")
 		for user in array
-			puts "Le handle Twitter de la mairie de #{user} est : #{search_handle(user)}"
+			handle_of_user = search_handle(user)
+			puts "Le handle Twitter de la mairie de #{user} est : #{handle_of_user}"
+			unless handle_of_user == "Aucun compte Twitter trouvé.."
+				@client.follow(handle_of_user)
+				puts "Abonnement à #{handle_of_user} fait !"
+			end
 		end
 	end
 end
