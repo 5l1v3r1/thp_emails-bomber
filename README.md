@@ -9,15 +9,15 @@ In these exercises,  we had to do a lot of things :
  we scrap data from this website : www.annuaire-des-mairies.com/
  
  
-**2 - First of all we had to Scrap some data :** <br>
+**2 - Data storage :** <br>
  we scrap data from this website : annuaire-des-mairies.com/
  
  
-**3 - First of all we had to Scrap some data :** <br>
+**3 - Sending mail  :** <br>
  we scrap data from this website : annuaire-des-mairies.com/
  
  
-**4 - First of all we had to Scrap some data :** <br>
+**4 - Tweeting :** <br>
  we scrap data from this website : annuaire-des-mairies.com/
 
 **After cloning the repository, make sure to do :**
