@@ -14,7 +14,7 @@ In these exercises,  we had to do a lot of things :
  for use then later in the part 3
  
  
-**3 - Sending mail  :** <br>
+**3 - Sending email  :** <br>
  for this part we use the hash in the json file 
  then we target each email in the hash for sending email.
  
