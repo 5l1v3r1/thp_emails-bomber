@@ -42,14 +42,14 @@ class Follower
 	def search_all_handle
 
 		city_list = []
-		notfound = "handle not found"
+		notfound = "Aucun compte Twitter trouvé"
 		i = 0
 
 		array = all_city_names = Converter.new.return_value("name", "email")
 		for user in array
 			handle_of_user = search_handle(user)
 			puts "Le handle Twitter de la mairie de #{user} est : #{handle_of_user}"
-			unless handle_of_user == "Aucun compte Twitter trouvé.."
+			unless handle_of_user == notfound
 				@client.follow(handle_of_user)
 				puts "Abonnement à #{handle_of_user} fait !"
 			end
