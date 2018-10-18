@@ -1,1 +1,15 @@
+[
+  {
+  "BAS-RHIN" :
+    [{"name" : "Strasbourg", "email" : "Strasbourg@gmail.com"},{"name" : "Mulhouse", "email" : "mulhouse@gmail.com"}]
+  },
+  {
+  "HAUT-RHIN" :
+    [{"name" : "Paris", "email" : "paris@gmail.com"},{"name" : "Lille", "email" : "lille@gmail.com"}]
+  },
+  {
+  "LOIRE-ATLANTIQUE" :
+    [{"name" : "Rouen", "email" : "rouen@gmail.com"},{"name" : "Marseille", "email" : "marseille@gmail.com"}]
+  }
+]
 

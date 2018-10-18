@@ -1,7 +1,11 @@
 require 'twitter'
+# require_relative 'lib/app/townhalls_convert_to_hash'
 
+require_relative 'townhalls_convert_to_hash'
 
 class Follower
+
+
 
 	def initialize
 		# quelques lignes qui enregistrent les clés d'APIs
@@ -14,8 +18,11 @@ class Follower
 	end
 
 
-	def perform
-		p @client
+	def use_data
+
+		p Converter.new.return_value("name", "email")		
+		
 	end
+
 	
 end
