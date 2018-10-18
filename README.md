@@ -6,7 +6,7 @@ In these exercises,  we had to do a lot of things :
 
 **1 - Scraping data :** <br>
  First of all we had to Scrap some data<br>
- we scrap data from this website : annuaire-des-mairies.com/
+ we scrap data from this website : www.annuaire-des-mairies.com/
  
  
 **2 - First of all we had to Scrap some data :** <br>
