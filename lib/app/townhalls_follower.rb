@@ -3,7 +3,7 @@ require 'twitter'
 require 'dotenv'
 Dotenv.load
 require_relative 'townhalls_convert_to_hash'
-
+require 'pry'
 
 class Follower
 
@@ -36,10 +36,10 @@ class Follower
 	end
 
 
-	def search_handle(research)
+	def search_handle(research, i)
 		# "Mairie de" + research.to_s)
 	
-			handle = @client.user_search("Mairie de " + research.to_s).take(1)[2].screen_name
+			handle = @client.user_search(research.to_s).take(1)[i].screen_name
 			return handle
 			
 	end
@@ -47,23 +47,38 @@ class Follower
 	def search_all_handle
 
 			city_list = []
-
-
+			notfound = "handle not found"		
+			i = 0
+		 
 		for user in handle_maker
 			research = user
+
 			begin
-			
-			city_list << search_handle(research)
-			search = search_handle(research)
+			search = search_handle(research, i)
+
 			rescue
-			notfound = "handle not found"
-			city_list << notfound
+			search = notfound
 			end
 
-			
+			i += 1
 			puts search
+			
 		end	
+			
+			
+			
+			
+	end
 
+			
+			
+
+			
+		
+			
+			
+
+	
 				
 			# rescue -> city_list << "handle not found"
 			
@@ -76,6 +91,6 @@ class Follower
 		#puts handle_maker.zip(city_list).to_h
 
 
-	end
+	
 
 end
