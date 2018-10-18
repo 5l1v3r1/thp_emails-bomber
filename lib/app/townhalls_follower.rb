@@ -42,7 +42,7 @@ class Follower
 	def search_all_handle
 
 		city_list = []
-		notfound = "Aucun compte Twitter trouvé"
+		notfound = "Aucun compte Twitter trouvé.."
 		i = 0
 
 		array = all_city_names = Converter.new.return_value("name", "email")
