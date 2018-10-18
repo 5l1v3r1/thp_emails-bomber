@@ -4,19 +4,19 @@
 In these exercises,  we had to do a lot of things : 
 * 
 
-**1 - First of all we had to Scrap some data :**
+**1 - First of all we had to Scrap some data :** <br>
  we scrap data from this website : annuaire-des-mairies.com/
  
  
-**2 - First of all we had to Scrap some data :**
+**2 - First of all we had to Scrap some data :** <br>
  we scrap data from this website : annuaire-des-mairies.com/
  
  
-**3 - First of all we had to Scrap some data :**
+**3 - First of all we had to Scrap some data :** <br>
  we scrap data from this website : annuaire-des-mairies.com/
  
  
-**4 - First of all we had to Scrap some data :**
+**4 - First of all we had to Scrap some data :** <br>
  we scrap data from this website : annuaire-des-mairies.com/
 
 **After cloning the repository, make sure to do :**
