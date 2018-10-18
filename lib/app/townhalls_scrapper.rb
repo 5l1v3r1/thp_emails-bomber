@@ -43,6 +43,7 @@ class Scrapp_All
       file.puts("[")
       file.puts(JSON.generate("Loire Atlantique" => tabl))
       file.puts(",")
+      file.close
       return municipalities #On retourne tous les hashs des villes
     end
     def perform
@@ -90,6 +91,7 @@ class Scrapp_All
       end
       file.puts(JSON.generate("Haute Corse" => tabl_1))
       file.puts(",")
+      file.close
       #the_hash = ["loire_atlantique" => prout]
       return municipalities #On retourne tous les hashs des villes
     end
@@ -141,6 +143,7 @@ class Scrapp_All
       #the_hash = ["loire_atlantique" => prout]
           file.puts(JSON.generate("Seine St Denis" => tabl_2))
           file.puts("]")
+          file.close
       return municipalities #On retourne tous les hashs des villes
     end
 
