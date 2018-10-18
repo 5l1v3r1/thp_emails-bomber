@@ -8,15 +8,24 @@ In these exercises,  we had to do a lot of things :
  First of all we had to Scrap some data<br>
  we scrap data from this website : www.annuaire-des-mairies.com/
  
+ in this part we use the file Emails/lib/app/townhalls_scrapper.rb
  
-**2 - Data storage :** <br>
+ 
+**2 - Storing data :** <br>
  after scraping the data we had to store them in the json file
  for use then later in the part 3
+ 
+ in this part we use the file Emails/lib/app/townhalls_scrapper.rb
+ and we store the data here Emails/db/emails.JSON
+
  
  
 **3 - Sending email  :** <br>
  for this part we use the hash in the json file 
  then we target each email in the hash for sending email.
+ 
+ in this part we use the file Emails/lib/app/townhalls_mailer.rb
+ and we use the data store here Emails/db/emails.JSON
  
  
  

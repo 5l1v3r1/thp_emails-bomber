@@ -4,6 +4,7 @@
   require "json"
 
 
+
 class Scrapp_All
 
   class Scrapper_Loire_Atl
@@ -26,14 +27,21 @@ class Scrapp_All
       municipalities = [] #Pour stocker tous les hashs des villes
       count = 0.0
       file = File.open("db/emails.JSON", "w")
+
+      tabl = []
+
       page.css("a.lientxt").each do |municipality| #On récupère chaque ville grâce à un sélecteur css
-        file.puts(JSON.generate({"name" => municipality.text, "email" => get_the_email_of_a_townhal_from_its_webpage(url + municipality['href'].sub!("./", ""))}))
+
+        tabl << {"name" => municipality.text, "email" => get_the_email_of_a_townhal_from_its_webpage(url + municipality['href'].sub!("./", ""))}
         #Ci-dessus, on stock le nom de la ville dans "name" et l'email dans "email"
         #On appelle la fonction qui va récupérer une adresse email d'une ville, avec l'url fabriquée grâce à la racine + le lien de la page de la ville
         print "Scrapping Loire Atlantique : #{((count / page.css("a.lientxt").size) * 100).to_i}%   (Municipality : #{municipality.text.red})             \r".yellow
         #On fait un pourcentage de progression grâce à un produit en croix
         count += 1
       end
+      #the_hash = ["loire_atlantique" => prout]
+      file.puts("emails_all = [")
+      file.puts(JSON.generate("Loire Atlantique" => tabl))
       return municipalities #On retourne tous les hashs des villes
     end
     def perform
@@ -41,8 +49,14 @@ class Scrapp_All
     end
   end
 
-  class Scrapper_Bas_Rhin
-    PAGE_URL = "http://annuaire-des-mairies.com/bas-rhin.html"
+
+
+
+
+
+
+  class Scrapper_Haute_Corse
+    PAGE_URL = "http://annuaire-des-mairies.com/haute-corse.html"
     #Récupère le contenu HTML du lien donné
 
     def get_the_email_of_a_townhal_from_its_webpage(page) #Récupère l'email de la mairie du lien donné
@@ -56,29 +70,44 @@ class Scrapp_All
     end
 
     def get_all_the_urls_of_val_doise_townhalls(page) #Récupére les liens des mairies de Val d'Oise
-      url = page.chomp("bas-rhin.html") #On garde juste la racine du lien
+      url = page.chomp("haute-corse.html") #On garde juste la racine du lien
       page = Nokogiri::HTML(open(page))
       municipalities = [] #Pour stocker tous les hashs des villes
       count = 0.0
       file = File.open("db/emails.JSON", "a")
+
+      tabl_1 = []
+
       page.css("a.lientxt").each do |municipality| #On récupère chaque ville grâce à un sélecteur css
-        file.puts(JSON.generate({"name" => municipality.text, "email" => get_the_email_of_a_townhal_from_its_webpage(url + municipality['href'].sub!("./", ""))}))
+
+        tabl_1 << {"name" => municipality.text, "email" => get_the_email_of_a_townhal_from_its_webpage(url + municipality['href'].sub!("./", ""))}
         #Ci-dessus, on stock le nom de la ville dans "name" et l'email dans "email"
         #On appelle la fonction qui va récupérer une adresse email d'une ville, avec l'url fabriquée grâce à la racine + le lien de la page de la ville
-        print "Scrapping Bas Rhin part:1 : #{((count / page.css("a.lientxt").size) * 100).to_i}%   (Municipality : #{municipality.text.red})             \r".yellow
+        print "Scrapping Haute Corse : #{((count / page.css("a.lientxt").size) * 100).to_i}%   (Municipality : #{municipality.text.red})             \r".yellow
         #On fait un pourcentage de progression grâce à un produit en croix
         count += 1
       end
+      file.puts(JSON.generate("Haute_Corse" => tabl_1))
+      #the_hash = ["loire_atlantique" => prout]
       return municipalities #On retourne tous les hashs des villes
     end
 
     def perform
+
       municipalities = get_all_the_urls_of_val_doise_townhalls(PAGE_URL)
     end
   end
 
-  class Scrapper_Bas_Rhin_2
-    PAGE_URL = "http://annuaire-des-mairies.com/bas-rhin-2.html"
+
+
+
+
+
+
+
+
+  class Scrapper_Seine_St_Denis
+    PAGE_URL = "http://annuaire-des-mairies.com/seine-saint-denis.html"
     #Récupère le contenu HTML du lien donné
 
     def get_the_email_of_a_townhal_from_its_webpage(page) #Récupère l'email de la mairie du lien donné
@@ -92,19 +121,24 @@ class Scrapp_All
     end
 
     def get_all_the_urls_of_val_doise_townhalls(page) #Récupére les liens des mairies de Val d'Oise
-      url = page.chomp("bas-rhin-2.html") #On garde juste la racine du lien
+      url = page.chomp("seine-saint-denis.html") #On garde juste la racine du lien
       page = Nokogiri::HTML(open(page))
       municipalities = [] #Pour stocker tous les hashs des villes
-      count = 0.0
+       count = 0.0
       file = File.open("db/emails.JSON", "a")
+      tabl_2 = []
       page.css("a.lientxt").each do |municipality| #On récupère chaque ville grâce à un sélecteur css
-        file.puts(JSON.generate({"name" => municipality.text, "email" => get_the_email_of_a_townhal_from_its_webpage(url + municipality['href'].sub!("./", ""))}))
+
+        tabl_2 << {"name" => municipality.text, "email" => get_the_email_of_a_townhal_from_its_webpage(url + municipality['href'].sub!("./", ""))}
         #Ci-dessus, on stock le nom de la ville dans "name" et l'email dans "email"
         #On appelle la fonction qui va récupérer une adresse email d'une ville, avec l'url fabriquée grâce à la racine + le lien de la page de la ville
-        print "Scrapping Bas Rhin part:2 : #{((count / page.css("a.lientxt").size) * 100).to_i}%   (Municipality : #{municipality.text.red})             \r".yellow
+        print "Scrapping Seine St Denis: #{((count / page.css("a.lientxt").size) * 100).to_i}%   (Municipality : #{municipality.text.red})             \r".yellow
         #On fait un pourcentage de progression grâce à un produit en croix
         count += 1
       end
+      #the_hash = ["loire_atlantique" => prout]
+          file.puts(JSON.generate("Seine_St_Denis" => tabl_2))
+          file.puts("]")
       return municipalities #On retourne tous les hashs des villes
     end
 
@@ -113,85 +147,15 @@ class Scrapp_All
     end
   end
 
-  class Scrapper_Haut_Rhin
-    PAGE_URL = "http://annuaire-des-mairies.com/haut-rhin.html"
-    #Récupère le contenu HTML du lien donné
 
-    def get_the_email_of_a_townhal_from_its_webpage(page) #Récupère l'email de la mairie du lien donné
-      page = Nokogiri::HTML(open(page))
-      text = page.xpath('/html/body/div/main/section[2]/div/table/tbody/tr[4]/td[2]').text #Récupère l'email
-      if text != "" #Si il y a un email
-        return text #Le retourner
-      else #Sinon
-        return "AUCUN EMAIL" #Retourner "AUCUN EMAIL"
-      end
-    end
 
-    def get_all_the_urls_of_val_doise_townhalls(page) #Récupére les liens des mairies de Val d'Oise
-      url = page.chomp("haut-rhin.html") #On garde juste la racine du lien
-      page = Nokogiri::HTML(open(page))
-      municipalities = [] #Pour stocker tous les hashs des villes
-      count = 0.0
-      file = File.open("db/emails.JSON", "a")
-      page.css("a.lientxt").each do |municipality| #On récupère chaque ville grâce à un sélecteur css
-        file.puts(JSON.generate({"name" => municipality.text, "email" => get_the_email_of_a_townhal_from_its_webpage(url + municipality['href'].sub!("./", ""))}))
-        #Ci-dessus, on stock le nom de la ville dans "name" et l'email dans "email"
-        #On appelle la fonction qui va récupérer une adresse email d'une ville, avec l'url fabriquée grâce à la racine + le lien de la page de la ville
-        print "Scrapping Haut Rhin part:1 : #{((count / page.css("a.lientxt").size) * 100).to_i}%   (Municipality : #{municipality.text.red})             \r".yellow
-        #On fait un pourcentage de progression grâce à un produit en croix
-        count += 1
-      end
-      return municipalities #On retourne tous les hashs des villes
-    end
 
-    def perform
-      municipalities = get_all_the_urls_of_val_doise_townhalls(PAGE_URL)
-    end
-  end
-
-  class Scrapper_Haut_Rhin_2
-    PAGE_URL = "http://annuaire-des-mairies.com/haut-rhin-2.html"
-    #Récupère le contenu HTML du lien donné
-
-    def get_the_email_of_a_townhal_from_its_webpage(page) #Récupère l'email de la mairie du lien donné
-      page = Nokogiri::HTML(open(page))
-      text = page.xpath('/html/body/div/main/section[2]/div/table/tbody/tr[4]/td[2]').text #Récupère l'email
-      if text != "" #Si il y a un email
-        return text #Le retourner
-      else #Sinon
-        return "AUCUN EMAIL" #Retourner "AUCUN EMAIL"
-      end
-    end
-
-    def get_all_the_urls_of_val_doise_townhalls(page) #Récupére les liens des mairies de Val d'Oise
-      url = page.chomp("haut-rhin-2.html") #On garde juste la racine du lien
-      page = Nokogiri::HTML(open(page))
-      municipalities = [] #Pour stocker tous les hashs des villes
-      count = 0.0
-      file = File.open("db/emails.JSON", "a")
-      page.css("a.lientxt").each do |municipality| #On récupère chaque ville grâce à un sélecteur css
-        file.puts(JSON.generate({"name" => municipality.text, "email" => get_the_email_of_a_townhal_from_its_webpage(url + municipality['href'].sub!("./", ""))}))
-        #Ci-dessus, on stock le nom de la ville dans "name" et l'email dans "email"
-        #On appelle la fonction qui va récupérer une adresse email d'une ville, avec l'url fabriquée grâce à la racine + le lien de la page de la ville
-        print "Scrapping Haut Rhin part:2 : #{((count / page.css("a.lientxt").size) * 100).to_i}%   (Municipality : #{municipality.text.red})             \r".yellow
-        #On fait un pourcentage de progression grâce à un produit en croix
-        count += 1
-      end
-      return municipalities #On retourne tous les hashs des villes
-    end
-
-    def perform
-      municipalities = get_all_the_urls_of_val_doise_townhalls(PAGE_URL)
-    end
-  end
 
   def launch
 
     Scrapper_Loire_Atl.new.perform
-    Scrapper_Bas_Rhin.new.perform
-    Scrapper_Bas_Rhin_2.new.perform
-    Scrapper_Haut_Rhin.new.perform
-    Scrapper_Haut_Rhin_2.new.perform
+    Scrapper_Haute_Corse.new.perform
+    Scrapper_Seine_St_Denis.new.perform
 
 end
 end
