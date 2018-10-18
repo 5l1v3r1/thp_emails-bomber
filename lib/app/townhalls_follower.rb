@@ -22,7 +22,21 @@ class Follower
 
 		all_city_names = Converter.new.return_value("name", "email")
 		
+			@handle = [] 
+		
+			all_city_names.each do |to_handle|
+				@handle << ("Maire de " + to_handle).to_s # Replace "Mairie de" with @ to get @ctiyname
+			end
+
+		# first = @handle.first ???????
+
+		# puts @handle
+
 	end
 
-	
+
+	def search_handle
+
+
+	end
 end
