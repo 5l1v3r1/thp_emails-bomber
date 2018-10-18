@@ -3,16 +3,14 @@ class Mailer
 
 gmail = Gmail.connect("kouklikarto@gmail.com", "thplesvoleurs")
 
-
 Gmail.connect("kouklikarto@gmail.com", "thplesvoleurs") do |gmail|
- puts gmail.logged_in?
+  puts gmail.logged_in?
 end
 
+hash_of_data = JSON.parse(File.read('db/townhalls.csv'))
 
-my_hash = JSON.parse(File.read('db/emails.JSON'))
 
-
-my_hash.each do |k,v|
+hash_of_data do |k,v|
 
 
 gmail.deliver do
@@ -37,7 +35,6 @@ gmail.deliver do
     Enfourner pendant 25 min au four à 210°C (thermostat 7).<br>
     Etape 5<br>
     Servir tiède avec une boule de glace vanille.<br>
-
 </p>"
   end
 end
