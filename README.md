@@ -21,9 +21,7 @@ $ ruby app.rb
 
 ## 💎 Gems
 
-<hr>
-
-in this project we use ;
+in this project we use : 
 
 source "https://rubygems.org"
 ruby '2.5.1'
