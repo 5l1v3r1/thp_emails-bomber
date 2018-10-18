@@ -22,7 +22,7 @@ $ ruby app.rb
 
 
 ## :european_post_office: The Strasbourg Crew 💪
-Done with @zOmegad, @BrokenPirate, @mxrch, and myself @OwwllMan
+Done with @zOmegad, @BrokenPirate, @mxrch, @Runefire32, and myself @OwwllMan
 
 <hr>
 
