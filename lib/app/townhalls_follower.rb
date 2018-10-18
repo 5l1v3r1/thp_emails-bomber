@@ -20,7 +20,7 @@ class Follower
 
 	def use_data
 
-		p Converter.new.return_value("name", "email")		
+		all_city_names = Converter.new.return_value("name", "email")
 		
 	end
 

@@ -2,15 +2,18 @@
 
 class Converter
 
-attr_accessor
+attr_accessor :data_values
+
+
 	def initialize
 		file = File.read('db/emails.JSON')
 		@data = JSON.parse(file)
-
+		@data_names = []
+		@data_title = []
 
 	end
 
-	def perform
+	def return_data
 		# Retourne le array
 		return @data		
 	end
@@ -20,8 +23,10 @@ attr_accessor
 
 			@data_names = []
 			@data_values = []
+			@data_title = []
 
-				for data_title in @data
+				for data_title in @data 
+					@data_title << data_title
 					for data_name in data_title.values
 						for data_value in data_name
 							@data_names << data_value[dataname]
@@ -30,18 +35,15 @@ attr_accessor
 					end
 				end	
 
+
 			
-			#puts @data_names
-			#puts @data_values
 
+			# puts @data_city
+			return @data_names
+	end
 
-			#@data_city = Hash[@data_names.zip(@data_values)]
-			# => {"Strasbourg"=>"Strasbourg@gmail.com", "Mulhouse"=>"mulhouse@gmail.com", "Paris"=>"paris@gmail.com", "Lille"=>"lille@gmail.com", "Rouen"=>"rouen@gmail.com", "Marseille"=>"marseille@gmail.com"}
+	def perform
 
-			# @data_city = @data_names.zip(@data_values)
-
-			puts @data_city
-			#return @data_city
 	end
 
 
