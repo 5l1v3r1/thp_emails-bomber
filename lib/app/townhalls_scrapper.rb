@@ -21,7 +21,7 @@ class Scrapp_All
       end
     end
 
-    def get_all_the_urls_of_val_doise_townhalls(page) #Récupére les liens des mairies de Val d'Oise
+    def get_all_the_urls(page) #Récupére les liens des mairies de Val d'Oise
       url = page.chomp("loire-atlantique.html") #On garde juste la racine du lien
       page = Nokogiri::HTML(open(page))
       municipalities = [] #Pour stocker tous les hashs des villes
@@ -40,12 +40,13 @@ class Scrapp_All
         count += 1
       end
       #the_hash = ["loire_atlantique" => prout]
-      file.puts("emails_all = [")
+      file.puts("[")
       file.puts(JSON.generate("Loire Atlantique" => tabl))
+      file.puts(",")
       return municipalities #On retourne tous les hashs des villes
     end
     def perform
-      municipalities = get_all_the_urls_of_val_doise_townhalls(PAGE_URL)
+      municipalities = get_all_the_urls(PAGE_URL)
     end
   end
 
@@ -69,7 +70,7 @@ class Scrapp_All
       end
     end
 
-    def get_all_the_urls_of_val_doise_townhalls(page) #Récupére les liens des mairies de Val d'Oise
+    def get_all_the_urls(page) #Récupére les liens des mairies de Val d'Oise
       url = page.chomp("haute-corse.html") #On garde juste la racine du lien
       page = Nokogiri::HTML(open(page))
       municipalities = [] #Pour stocker tous les hashs des villes
@@ -87,14 +88,15 @@ class Scrapp_All
         #On fait un pourcentage de progression grâce à un produit en croix
         count += 1
       end
-      file.puts(JSON.generate("Haute_Corse" => tabl_1))
+      file.puts(JSON.generate("Haute Corse" => tabl_1))
+      file.puts(",")
       #the_hash = ["loire_atlantique" => prout]
       return municipalities #On retourne tous les hashs des villes
     end
 
     def perform
 
-      municipalities = get_all_the_urls_of_val_doise_townhalls(PAGE_URL)
+      municipalities = get_all_the_urls(PAGE_URL)
     end
   end
 
@@ -120,7 +122,7 @@ class Scrapp_All
       end
     end
 
-    def get_all_the_urls_of_val_doise_townhalls(page) #Récupére les liens des mairies de Val d'Oise
+    def get_all_the_urls(page) #Récupére les liens des mairies de Val d'Oise
       url = page.chomp("seine-saint-denis.html") #On garde juste la racine du lien
       page = Nokogiri::HTML(open(page))
       municipalities = [] #Pour stocker tous les hashs des villes
@@ -137,13 +139,13 @@ class Scrapp_All
         count += 1
       end
       #the_hash = ["loire_atlantique" => prout]
-          file.puts(JSON.generate("Seine_St_Denis" => tabl_2))
+          file.puts(JSON.generate("Seine St Denis" => tabl_2))
           file.puts("]")
       return municipalities #On retourne tous les hashs des villes
     end
 
     def perform
-      municipalities = get_all_the_urls_of_val_doise_townhalls(PAGE_URL)
+      municipalities = get_all_the_urls(PAGE_URL)
     end
   end
 
