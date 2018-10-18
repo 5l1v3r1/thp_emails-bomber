@@ -9,7 +9,7 @@ In these exercises,  we had to do a lot of things :
  we scrap data from this website : www.annuaire-des-mairies.com/
  
  
-**2 - Data storage :** <br>
+**2 - Storing data :** <br>
  after scraping the data we had to store them in the json file
  for use then later in the part 3
  
