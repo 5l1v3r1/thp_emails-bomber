@@ -4,6 +4,21 @@
 In these exercises,  we had to do a lot of things : 
 * 
 
+**1 - First of all we had to Scrap some data :**
+ we scrap data from this website : annuaire-des-mairies.com/
+ 
+ 
+**2 - First of all we had to Scrap some data :**
+ we scrap data from this website : annuaire-des-mairies.com/
+ 
+ 
+**3 - First of all we had to Scrap some data :**
+ we scrap data from this website : annuaire-des-mairies.com/
+ 
+ 
+**4 - First of all we had to Scrap some data :**
+ we scrap data from this website : annuaire-des-mairies.com/
+
 **After cloning the repository, make sure to do :**
 ```sh
 $ cd Emails
@@ -25,11 +40,11 @@ source "https://rubygems.org"
 ruby '2.5.1'
 
 ```sh
-gem 'nokogiri'<br>
-gem 'twitter'<br>
-gem 'json'<br>
-gem 'awesome_print'<br>
-gem 'dotenv'<br>
+gem 'nokogiri'
+gem 'twitter'
+gem 'json'
+gem 'awesome_print'
+gem 'dotenv'
 ```
 
 ## :european_post_office: The Strasbourg Crew 💪
