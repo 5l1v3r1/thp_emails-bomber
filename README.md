@@ -10,15 +10,18 @@ In these exercises,  we had to do a lot of things :
  
  
 **2 - Data storage :** <br>
- we scrap data from this website : annuaire-des-mairies.com/
+ after scraping the data we had to store them in the json file
+ for use then later in the part 3
  
  
 **3 - Sending mail  :** <br>
- we scrap data from this website : annuaire-des-mairies.com/
+ for this part we use the hash in the json file 
+ then we target each email in the hash for sending email.
+ 
  
  
 **4 - Tweeting :** <br>
- we scrap data from this website : annuaire-des-mairies.com/
+after sending some email we use the twitter api for tweet something to the same target.
 
 **After cloning the repository, make sure to do :**
 ```sh
