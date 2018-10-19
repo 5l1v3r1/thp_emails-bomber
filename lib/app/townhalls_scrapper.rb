@@ -17,7 +17,7 @@ class Scrapp_All
     text = page.xpath('/html/body/div/main/section[2]/div/table/tbody/tr[4]/td[2]').text #Récupère l'email
     if text != "" #Si il y a un email
       return text #Le retourner
-    else #Sinon
+    else
       return "AUCUN EMAIL" #Retourner "AUCUN EMAIL"
     end
   end
@@ -36,7 +36,7 @@ class Scrapp_All
       #On fait un pourcentage de progression grâce à un produit en croix
       count += 1
     end
-    @file.puts(JSON.generate("#{departement_name}" => municipalities))
+    @file.puts(JSON.generate("#{departement_name}" => municipalities)) #On enregistre dans le JSON toutes les mairies du département concerné
   end
 
   def perform
