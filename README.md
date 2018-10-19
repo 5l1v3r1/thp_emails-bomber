@@ -3,7 +3,7 @@
 
 ## :mag: The content
 In these exercises, I had to make a program that does :
-* Scratching of all the town halls of 3 given French departments
+* Scrapping of all the town halls of 3 given French departments
 * Then send them a personalized email
 * And finally, who looks for their Twitter handle and follows them.
 
