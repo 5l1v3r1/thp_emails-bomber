@@ -1,71 +1,24 @@
-# The Hacking Project - Emails
+# The Hacking Project - Emails Bomber
 
-## 📰 The content
-In these exercises,  we had to do a lot of things : 
-* 
 
-**1 - Scraping data :** <br>
- First of all we had to Scrap some data<br>
- we scrap data from this website : www.annuaire-des-mairies.com/
- 
- in this part we use the file Emails/lib/app/townhalls_scrapper.rb
- 
- 
-**2 - Storing data :** <br>
- after scraping the data we had to store them in the json file
- for use then later in the part 3
- 
- in this part we use the file Emails/lib/app/townhalls_scrapper.rb
- and we store the data here Emails/db/emails.JSON
-
- 
- 
-**3 - Sending email  :** <br>
- for this part we use the hash in the json file 
- then we target each email in the hash for sending email.
- 
- in this part we use the file Emails/lib/app/townhalls_mailer.rb
- and we use the data store here Emails/db/emails.JSON
- 
- 
- 
-**4 - Tweeting :** <br>
-after sending some email we use the twitter api for tweet something to the same target.
+## :mag: The content
+In these exercises, I had to make a program that does :
+* Scratching of all the town halls of 3 given French departments
+* Then send them a personalized email
+* And finally, who looks for their Twitter handle and follows them.
 
 **After cloning the repository, make sure to do :**
 ```sh
-$ cd Emails
+$ cd thp_emails-bomber
 $ bundle install
 ```
 This will install all the dependencies needed for the exercises.
 
-Than you can run the programme with 
-
-```sh
-$ ruby app.rb
-```
-
-## 💎 Gems
-
-in this project we use : 
-
-source "https://rubygems.org"
-ruby '2.5.1'
-
-```sh
-gem 'nokogiri'
-gem 'twitter'
-gem 'json'
-gem 'awesome_print'
-gem 'dotenv'
-```
-
-## :european_post_office: The Strasbourg Crew 💪
-Done with @zOmegad, @BrokenPirate, @mxrch, @Runefire32, and myself @OwwllMan
+## :european_post_office: The Strasbourgeois Crew
+Done in team with @OwwllMan, @zOmegad, @Runefire32 and @BrokenPirate. :heart:
 
 <hr>
 
 ***It's an exercise from the TheHackingProject bootcamp.***
 
 ***> www.thehackingproject.org***
-
